@@ -35,6 +35,8 @@ pip install -r requirements.txt
 # Run full pipeline
 python scripts/run_all.py
 
+![Paper Figures](https://raw.githubusercontent.com/engalipazoky-max/zeta-milp-certified/main/figures/certified_zeta_analysis.png)
+
 
 ## 📄 Citation
 
