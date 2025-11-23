@@ -1,0 +1,121 @@
+﻿**src/spectral_pipeline/cli.py** (new):
+```python
+"""Command-line interface for spectral pipeline."""
+import click
+import pandas as pd
+import matplotlib.pyplot as plt
+from .data.zeta_zeros import LMFDBZetaZeros
+from .data.synthetic import SyntheticSequence
+from .representation.lie_group import LieGroupSpectralCompression
+from .pipeline import SpectralPipeline
+from .math_core.statistics import validate_convergence
+
+@click.group()
+def main():
+    """Spectral Pipeline CLI - Mathematical spectral analysis tools."""
+    pass
+
+@main.command()
+@click.option('--height', default=1e12, help='Starting height for zeta zeros')
+@click.option('--count', default=1000, help='Number of zeros to fetch')
+@click.option('--output', default='zeros.csv', help='Output file path')
+def fetch(height, count, output):
+    """Fetch zeta zeros from LMFDB."""
+    try:
+        data_source = LMFDBZetaZeros(height=height, count=count)
+        zeros = data_source.load()
+        
+        df = pd.DataFrame({'gamma': zeros})
+        df.to_csv(output, index=False)
+        click.echo(f"✓ Fetched {len(zeros)} zeros to {output}")
+        
+    except Exception as e:
+        click.echo(f"✗ Error fetching zeros: {e}")
+
+@main.command()
+@click.option('--input', 'input_file', required=True, help='Input data file')
+@click.option('--representation', type=click.Choice(['raw', 'lie-group']), 
+              default='lie-group', help='Representation method')
+@click.option('--iterations', default=50, help='Number of control iterations')
+def analyze(input_file, representation, iterations):
+    """Run spectral analysis pipeline."""
+    try:
+        # Load data
+        df = pd.read_csv(input_file)
+        from .data.base import DataSource
+        
+        class CSVDataSource(DataSource):
+            def load(self):
+                return df['gamma'].values
+        
+        # Setup representation
+        if representation == 'lie-group':
+            repr_obj = LieGroupSpectralCompression()
+        else:
+            from .representation.raw import RawRepresentation
+            repr_obj = RawRepresentation()
+        
+        # Run pipeline
+        pipeline = SpectralPipeline(CSVDataSource(), repr_obj)
+        metrics = pipeline.run(n_iterations=iterations)
+        
+        # Display results
+        final_metrics = pipeline.get_final_metrics()
+        click.echo("📊 Analysis Results:")
+        for key, value in final_metrics.items():
+            click.echo(f"  {key}: {value:.6f}")
+            
+    except Exception as e:
+        click.echo(f"✗ Analysis error: {e}")
+
+@main.command()
+@click.option('--input', 'input_file', required=True, help='Input data file')
+@click.option('--output', default='convergence_plot.png', help='Output plot file')
+def report(input_file, output):
+    """Generate convergence analysis report."""
+    try:
+        df = pd.read_csv(input_file)
+        zeros = df['gamma'].values
+        
+        # Normalize gaps
+        gaps = np.diff(zeros)
+        normalized_gaps = gaps / np.mean(gaps)
+        
+        # Validate convergence
+        result = validate_convergence(normalized_gaps)
+        
+        # Create plot
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+        
+        # Gap distribution
+        ax1.hist(normalized_gaps, bins=50, density=True, alpha=0.7)
+        ax1.set_xlabel('Normalized Gap Size')
+        ax1.set_ylabel('Density')
+        ax1.set_title('Gap Distribution')
+        ax1.grid(True, alpha=0.3)
+        
+        # Convergence info
+        ax2.text(0.1, 0.9, f"S_N = {result['S_N']:.6f}", transform=ax2.transAxes, fontsize=12)
+        ax2.text(0.1, 0.8, f"C_GUE = 0.60338", transform=ax2.transAxes, fontsize=12)
+        ax2.text(0.1, 0.7, f"Deviation = {result['deviation']:.6f}", transform=ax2.transAxes, fontsize=12)
+        ax2.text(0.1, 0.6, f"Bound = {result['bound']:.6f}", transform=ax2.transAxes, fontsize=12)
+        ax2.text(0.1, 0.5, f"Bound Satisfied: {result['bound_satisfied']}", 
+                transform=ax2.transAxes, fontsize=12, 
+                color='green' if result['bound_satisfied'] else 'red')
+        
+        ax2.set_xlim(0, 1)
+        ax2.set_ylim(0, 1)
+        ax2.set_title('Convergence Analysis')
+        ax2.axis('off')
+        
+        plt.tight_layout()
+        plt.savefig(output, dpi=300, bbox_inches='tight')
+        plt.close()
+        
+        click.echo(f"✓ Report generated: {output}")
+        
+    except Exception as e:
+        click.echo(f"✗ Report generation error: {e}")
+
+if __name__ == '__main__':
+    main()
