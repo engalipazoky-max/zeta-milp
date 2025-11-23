@@ -1,2 +1,36 @@
-# zeta-milp
-Certified MILP analysis of Riemann zeta zeros
+# Certifiable Computational Framework for Zeta Zero Spectral Analysis
+
+This repository provides the **full reproducible pipeline** for the paper:
+
+&gt; **"Certifiable Computational Framework for Riemann Zeta Zero Spectral Analysis with Explicit Performance Guarantees"**  
+&gt; *Anonymous Author*  
+&gt; Submitted to *Experimental Mathematics* (2025)
+
+---
+
+## 🔍 What You Can Reproduce Here
+
+- ✅ Validate the convergence bound:  
+  ‖S_N − C_GUE‖ ≤ 2.5/√N + 3 log N / N
+- ✅ Re-run MILP subset selection with certified optimality gaps &lt; 1e-6
+- ✅ Reproduce all figures (1a–1d) from the paper
+- ✅ Re-run GUE simulations and LMFDB data extraction
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# Clone
+git clone https://github.com/engalipazoky-max/zeta-milp-certified.git
+cd zeta-milp-certified
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run full pipeline
+python scripts/run_all.py
