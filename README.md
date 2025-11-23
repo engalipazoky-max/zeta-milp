@@ -34,3 +34,17 @@ pip install -r requirements.txt
 
 # Run full pipeline
 python scripts/run_all.py
+
+
+## 📄 Citation
+
+If you use this code or data in your research, please cite:
+
+```bibtex
+@misc{pazoky2025zeta,
+  author       = {Ali Pazoky},
+  title        = {Certifiable Computational Framework for Riemann Zeta Zero Spectral Analysis},
+  year         = {2025},
+  howpublished = {\url{https://github.com/engalipazoky-max/zeta-milp-certified}},
+  note         = {GitHub repository, DOI: 10.5281/zenodo.xxxxxxx}
+}
