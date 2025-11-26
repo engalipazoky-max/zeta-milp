@@ -69,4 +69,3 @@ If you use this code or data in your research, please cite:
   year         = {2025},
   howpublished = {\url{https://github.com/engalipazoky-max/zeta-milp}},
   note         = {GitHub repository, DOI: [10.5281/zenodo.17688932)}
-}
