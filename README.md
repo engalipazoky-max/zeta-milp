@@ -68,4 +68,4 @@ If you use this code or data in your research, please cite:
   title        = {Certifiable Computational Framework for Riemann Zeta Zero Spectral Analysis},
   year         = {2025},
   howpublished = {\url{https://github.com/engalipazoky-max/zeta-milp}},
-  note         = {GitHub repository, DOI: [10.5281/zenodo.17688932)} }
+  note         = {GitHub repository, DOI: (10.5281/zenodo.17688932)} }
