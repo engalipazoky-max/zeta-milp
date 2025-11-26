@@ -17,6 +17,11 @@ This repository provides the **full reproducible pipeline** for the paper:
 - ✅ Re-run GUE simulations and LMFDB data extraction
 
 ---
+## 📄 Latest Preprint
+- **PDF**: [zeta_milp_2025_preprint.pdf](paper/zeta_milp_2025_preprint.pdf)
+- **Zenodo DOI**: [10.5281/zenodo.17688932](https://doi.org/10.5281/zenodo.17688932)
+- **arXiv**: *Pending endorsement* (submitted [Date])
+---
 
 ## 🚀 Quick Start
 
