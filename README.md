@@ -3,7 +3,7 @@
 This repository provides the **full reproducible pipeline** for the paper:
 
 &gt; **"Certifiable Computational Framework for Riemann Zeta Zero Spectral Analysis with Explicit Performance Guarantees"**  
-&gt; *Anonymous Author*  
+&gt; *ali pazoky*  
 &gt; Submitted to *Experimental Mathematics* (2025)
 
 ---
