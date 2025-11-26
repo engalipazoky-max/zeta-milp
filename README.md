@@ -23,18 +23,19 @@ This repository provides the **full reproducible pipeline** for the paper:
 - **arXiv**: *Pending endorsement* (submitted [Date])
 ---
 graph TD
+
     A[LMFDB Data] --> B[Preprocessing]
-    B --> C[S_N Computation]
-    C --> D[Bootstrap CI]
-    D --> E{Representation}
-    E --> F[Raw Domain]
-    E --> G[MILP Subset]
-    E --> H[Lie-Group Compression]
-    F --> I[CAL Controller]
+    B --> C [S_N Computation]
+    C --> D [Bootstrap CI]
+    D --> E {Representation}
+    E --> F [Raw Domain]
+    E --> G [MILP Subset]
+    E --> H [Lie-Group Compression]
+    F --> I [CAL Controller]
     G --> I
     H --> I
-    I --> J[Evaluation]
-    J --> K[Certification]
+    I --> J [Evaluation]
+    J --> K [Certification]
 ---
 
 ## 🚀 Quick Start
