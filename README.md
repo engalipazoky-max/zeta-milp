@@ -22,6 +22,20 @@ This repository provides the **full reproducible pipeline** for the paper:
 - **Zenodo DOI**: [10.5281/zenodo.17688932](https://doi.org/10.5281/zenodo.17688932)
 - **arXiv**: *Pending endorsement* (submitted [Date])
 ---
+graph TD
+    A[LMFDB Data] --> B[Preprocessing]
+    B --> C[S_N Computation]
+    C --> D[Bootstrap CI]
+    D --> E{Representation}
+    E --> F[Raw Domain]
+    E --> G[MILP Subset]
+    E --> H[Lie-Group Compression]
+    F --> I[CAL Controller]
+    G --> I
+    H --> I
+    I --> J[Evaluation]
+    J --> K[Certification]
+---
 
 ## 🚀 Quick Start
 
