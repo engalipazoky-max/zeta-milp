@@ -60,7 +60,7 @@ python scripts/run_all.py
 
 ## 📄 Citation
 
-If you use this code or data in your research, please cite:
+If you use this data in your research, please cite:
 
 ```bibtex
 @misc{pazoky2025zeta,
