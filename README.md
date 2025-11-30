@@ -6,6 +6,9 @@ This repository provides the **full reproducible pipeline** for the paper:
 &gt; *ali pazoky*  
 &gt; Submitted to *Experimental Mathematics* (2025)
 
+**Open-source license**: GPL-3.0-or-later (academic/research use fully free)  
+**Commercial license**: contact me → let's make money together while keeping science open
+
 ---
 
 ## 🔍 What You Can Reproduce Here
