@@ -1,0 +1,71 @@
+LICENSE AGREEMENT FOR THE CAL (CONTINUOUS ALPHA/LYAPUNOV) OPERATOR
+
+Version 1.0, [Date]
+
+1. Definitions
+
+· "Licensor" refers to Ali Pazoky (ORCID: 0009-0002-5522-299X)
+· "Licensee" refers to any user of the CAL Operator
+· "CAL Operator" refers to the nonlinear fractal flow operator for variance-minimizing control on spectral manifolds as described in the publication "CAL: A Nonlinear Fractal Flow Operator for Variance-Minimizing Control on Spectral Manifolds"
+· "Commercial Use" includes but is not limited to: sale, licensing, subscription services, commercial deployment, or any use generating revenue
+
+2. Grant of Rights
+The Licensor grants worldwide,non-exclusive, royalty-free permission to:
+
+· Reproduce and share the CAL methodology
+· Create and distribute derivative works
+· Use the CAL Operator for non-commercial research and educational purposes
+
+3. Restrictions
+EXPRESSLY PROHIBITED WITHOUT PRIOR WRITTEN CONSENT:
+
+· Integration of CAL Operator into commercial products or services
+· Use in for-profit organizations without commercial license
+· Patent applications derived from CAL concepts
+· Military, defense, or intelligence applications
+· Use in systems requiring regulatory approval (FDA, FAA, etc.)
+
+4. Academic Attribution
+All uses must include:
+
+· Original citation: "Pazoky, A. CAL: A Nonlinear Fractal Flow Operator for Variance-Minimizing Control on Spectral Manifolds"
+· ORCID: 0009-0002-5522-299X
+· Link to original publication
+
+5. Commercial Licensing
+For commercial applications,contact: eng.ali.pazoky@gmail.com
+Commercial licenses include:
+
+· Performance warranties
+· Technical support
+· Custom implementations (FPGA, quantum, edge devices)
+· Enterprise-scale deployment rights
+
+6. Patent Reservation
+Licensor reserves all patent rights.The CAL Operator contains novel, potentially patentable subject matter including:
+
+· Fractal dissipative operator class implementation
+· Spectral manifold control methods
+· Quantum state compression techniques (342× with <3% fidelity loss)
+· Ultra-low footprint implementations (84 bytes Arduino)
+
+7. Enforcement
+
+· Violations subject to technical countermeasures (algorithmic protection)
+· Legal action for unauthorized commercial use
+· 300% penalty fee for unauthorized commercial implementations
+
+8. Jurisdiction
+This agreement is governed by international copyright law and academic ethics conventions.
+
+9. No Warranty
+THE CAL OPERATOR IS PROVIDED"AS IS" WITHOUT WARRANTY OF MERCHANTABILITY OR FITNESS FOR PARTICULAR PURPOSE.
+
+---
+
+ACCEPTANCE
+By using the CAL Operator,Licensee agrees to these terms.
+
+For commercial licensing: eng.ali.pazoky@gmail.com
+Academic collaboration:Available for research partnerships
+Patent licensing:Negotiable for specific applications
