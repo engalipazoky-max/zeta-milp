@@ -5,7 +5,7 @@ description = "Certified Computational Framework for Spectral Analysis with Expl
 authors = [
     {name = "Ali Pazoky", email = "eng.ali.pazoky@gmail.com"},
 ]
-license = {text = "MIT"}
+license = {text = "GPL v3"}
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
