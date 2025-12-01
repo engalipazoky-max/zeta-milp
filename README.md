@@ -53,7 +53,7 @@ graph TD
 
 ```bash
 # Clone
-git clone https://github.com/engalipazoky-max/zeta-milp-certified.git
+git clone https://github.com/engalipazoky-max/zeta-milp.git
 cd zeta-milp-certified
 
 # Create virtual environment
