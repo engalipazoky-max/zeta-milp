@@ -9,6 +9,14 @@ This repository provides the **full reproducible pipeline** for the paper:
 **Open-source license**: GPL-3.0-or-later (academic/research use fully free)  
 **Commercial license**: contact me → let's make money together while keeping science open
 
+**LEGAL NOTICE: Commercial Use of CAL
+
+1. The academic paper is CC BY for research citation only
+2. Implementation, derivation, and commercial application require:
+   - GPL v3 for academic/non-commercial
+   - Written commercial license for businesses
+3. Contact: eng.ali.pazoky@gmail.com for commercial inquiries
+   
 ---
 
 ## 🔍 What You Can Reproduce Here
