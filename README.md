@@ -54,7 +54,7 @@ graph TD
 ```bash
 # Clone
 git clone https://github.com/engalipazoky-max/zeta-milp.git
-cd zeta-milp-certified
+cd zeta-milp
 
 # Create virtual environment
 python -m venv venv
